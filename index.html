@@ -1,0 +1,326 @@
+<!-- Maison Flynn #8750359 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+
+      body {
+        background-image: linear-gradient(to bottom right, #ffffff, #ece9e6);
+      }
+
+      form {
+        padding: 20px;
+        width: 100%;
+        min-width: 350px;
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+
+      h1 {
+        margin-top: 0;
+        text-align: center;
+      }
+
+      input[type='text'],
+      input[type='password'] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-image: linear-gradient(to bottom right, #414345, #232526);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      button:active {
+        transform: scale(0.99);
+      }
+
+      .loginUtilities {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .icon i {
+        position: absolute;
+        left: 10px;
+        margin-bottom: 10px;
+        color: #757575;
+      }
+
+      .icon input[type='text'],
+      .icon input[type='password'] {
+        padding-left: 30px;
+      }
+
+      input[type='checkbox'] {
+        accent-color: black;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-image: linear-gradient(to bottom right, #414345, #232526);
+          color: white;
+        }
+
+        input[type='text'],
+        input[type='password'],
+        button,
+        input[type='checkbox'] {
+          background-image: linear-gradient(to bottom right, #ffffff, #ece9e6);
+          color: black;
+        }
+
+        a {
+          color: white;
+        }
+
+        input[type='checkbox'] {
+          accent-color: #121212;
+        }
+      }
+
+      /* Updated Colours */
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        background: #f8f8f8;
+      }
+
+      form {
+        padding: 20px;
+        width: 100%;
+        min-width: 350px;
+        background: #fafafa;
+        border-radius: 16px;
+        box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.15),
+          10px 10px 70px rgba(0, 0, 0, 0.15),
+          inset -5px -5px 15px rgba(0, 0, 0, 0.15),
+          inset 5px 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      input[type='text'],
+      input[type='password'] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1),
+          2px 2px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 5px rgba(0, 0, 0, 0.1),
+          inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+        color: #333;
+      }
+
+      button {
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1),
+          2px 2px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 5px rgba(0, 0, 0, 0.1),
+          inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #90ee90;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover,
+      button:active {
+        background: #aaddaa;
+      }
+
+      .icon i {
+        color: #757575;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body,
+        html {
+          background: #292929;
+        }
+
+        form {
+          background: #333;
+          box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+            10px 10px 70px rgba(0, 0, 0, 0.25),
+            inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+            inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type='text'],
+        input[type='password'],
+        button {
+          background: #505050;
+          color: #fff;
+        }
+
+        button:hover,
+        button:active {
+          background: #86c486;
+        }
+
+        .icon i {
+          color: #fff;
+        }
+      }
+      input[type='checkbox'] {
+        accent-color: #4a90e2;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body,
+        html {
+          background: #292929;
+        }
+
+        form {
+          background: #333;
+        }
+
+        input[type='text'],
+        input[type='password'],
+        button {
+          background: #505050;
+          color: #fff;
+        }
+
+        input[type='text'],
+        input[type='password'] {
+          background: #fff;
+          color: #333;
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25),
+            5px 5px 30px rgba(0, 0, 0, 0.25),
+            inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+            inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+          background: #76b947;
+          box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.15),
+            2px 2px 5px rgba(0, 0, 0, 0.15),
+            inset -3px -3px 5px rgba(0, 0, 0, 0.2),
+            inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover,
+        button:active {
+          background: #006400;
+        }
+
+        .icon i {
+          color: #333;
+        }
+
+        input[type='checkbox'] {
+          accent-color: #3a92cc;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <h1>Login</h1>
+
+      <div class="login">
+        <!-- Username w/ Icon -->
+        <div class="icon">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="username" placeholder="Username" required />
+        </div>
+
+        <!-- Password w/ Icon -->
+        <div class="icon">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="loginUtilities">
+          <!-- Remember Me -->
+          <label> <input type="checkbox" name="remember" />Remember me </label>
+
+          <!-- Forgot Password? -->
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit"><strong>Login</strong></button>
+
+        <!-- Don't Have Account? Register -->
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </body>
+</html>
