@@ -28,7 +28,7 @@
         padding: 20px;
         width: 100%;
         min-width: 350px;
-        /* From https://css.glass */
+        /* From https://css.glass */ /* NOT Used */
         background: rgba(255, 255, 255, 0.2);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -199,7 +199,12 @@
       .icon i {
         color: #757575;
       }
-
+      .icon i.password-toggle {
+        position: absolute;
+        left: 325px;
+        cursor: pointer;
+        color: #757575;
+      }
       @media (prefers-color-scheme: dark) {
         body,
         html {
@@ -281,6 +286,10 @@
         input[type='checkbox'] {
           accent-color: #3a92cc;
         }
+
+        .icon i.password-toggle {
+          color: #333;
+        }
       }
     </style>
   </head>
@@ -290,21 +299,27 @@
       <h1>Login</h1>
 
       <div class="login">
-        <!-- Username w/ Icon -->
+        <!-- Username -->
         <div class="icon">
           <i class="fa fa-user" aria-hidden="true"></i>
           <input type="text" name="username" placeholder="Username" required />
         </div>
 
-        <!-- Password w/ Icon -->
+        <!-- Password (Toggle Visibility) -->
         <div class="icon">
           <i class="fa fa-lock" aria-hidden="true"></i>
           <input
             type="password"
+            id="password"
             name="password"
             placeholder="Password"
             required
           />
+          <i
+            class="fa fa-eye password-toggle"
+            aria-hidden="true"
+            onclick="togglePasswordVisibility()"
+          ></i>
         </div>
 
         <div class="loginUtilities">
@@ -322,5 +337,20 @@
         <p>Don't have an account? <a href="#">Register</a></p>
       </div>
     </form>
+    <script>
+      function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var toggleIcon = document.querySelector('.password-toggle');
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          toggleIcon.classList.remove('fa-eye');
+          toggleIcon.classList.add('fa-eye-slash');
+        } else {
+          passwordInput.type = 'password';
+          toggleIcon.classList.remove('fa-eye-slash');
+          toggleIcon.classList.add('fa-eye');
+        }
+      }
+    </script>
   </body>
 </html>
