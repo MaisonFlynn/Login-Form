@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Form</title>
-    <!-- Favicon(s) System Theme -->
+    <!-- Favicon(s) Dynamic Light & Dark Mode -->
     <link
       rel="shortcut icon"
-      href="images/Logo (Dark).png"
+      href="../../images/Logo Dark Mode.png"
       media="(prefers-color-scheme: dark)"
     />
     <link
       rel="shortcut icon"
-      href="images/Logo (Light).png"
+      href="../../images/Logo Light Mode.png"
       media="(prefers-color-scheme: light)"
     />
     <link
@@ -50,6 +50,7 @@
       h1 {
         margin-top: 0;
         text-align: center;
+        color: #333;
       }
 
       input[type='text'],
@@ -163,6 +164,7 @@
       }
 
       form {
+        color: #333;
         padding: 20px;
         width: 100%;
         min-width: 350px;
@@ -172,6 +174,10 @@
           10px 10px 70px rgba(0, 0, 0, 0.15),
           inset -5px -5px 15px rgba(0, 0, 0, 0.15),
           inset 5px 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      a {
+        color: #333;
       }
 
       input[type='text'],
@@ -189,6 +195,8 @@
       }
 
       button {
+        font-size: 18px;
+        font-weight: bold;
         box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1),
           2px 2px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 5px rgba(0, 0, 0, 0.1),
           inset 2px 2px 5px rgba(0, 0, 0, 0.05);
@@ -223,11 +231,16 @@
         }
 
         form {
+          color: #fff;
           background: #333;
           box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
             10px 10px 70px rgba(0, 0, 0, 0.25),
             inset -5px -5px 15px rgba(0, 0, 0, 0.5),
             inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        a {
+          color: #fff;
         }
 
         input[type='text'],
@@ -287,7 +300,7 @@
 
         button:hover,
         button:active {
-          background: #006400;
+          background: #669966;
         }
 
         .icon i {
@@ -300,6 +313,10 @@
 
         .icon i.password-toggle {
           color: #333;
+        }
+
+        h1 {
+          color: #fff;
         }
       }
     </style>
@@ -352,7 +369,7 @@
         </div>
 
         <!-- Login Button -->
-        <button type="submit"><strong>Login</strong></button>
+        <button type="submit">Login</button>
 
         <!-- Don't Have Account? Register -->
         <p>Don't have an account? <a href="#">Register</a></p>
